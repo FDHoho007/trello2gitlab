@@ -284,6 +284,7 @@ else:
             if attachment["isUpload"]:
                 attachment_mapping[attachment["url"]] = attachment
                 attachment_mapping[attachment["url"]]["uuid"] = str(uuid.uuid4()).replace("-", "").lower()
+                attachment_mapping[attachment["url"]]["fileName"] = re.sub(r"[^a-zA-Z0-9._-]", "_", attachment_mapping[attachment["url"]]["fileName"])
 
 
     # Import issues
